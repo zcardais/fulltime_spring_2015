@@ -1,3 +1,9 @@
+# Create a rock_paper_scissors.rb
+# - first, create it so you can do it one time through
+# - then do it so you can loop through it continuously through until you type “end”
+# - add a counter, first to 5 wins
+
+
 puts "Let's play!" 
 
 @user_wins = 0
