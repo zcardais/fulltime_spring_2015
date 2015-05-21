@@ -1,0 +1,39 @@
+h1 {
+	font-size: 5em;
+	color: #2952a3;
+	font-family: Helvetica;
+	text-align: center;
+}
+
+p {
+	font-size: 2em;
+	text-align: center;
+}
+
+div {
+	height: 50px;
+	width: 120px;
+	border-color: #6495ED;
+	border-width: 2px;
+	border-style: solid;
+	background: #bcd2ee;
+	border-radius: 10px;
+	/*margin-left: auto;
+	margin-right: auto;*/
+	margin: 0 auto;
+	/*margin: 0 auto 0 auto;*/
+}
+
+a {
+	text-decoration: none;
+}
+
+.button {
+	text-align: center;
+	color: #2952a3;
+	font-size: 1em;
+}
+
+div:hover {
+	background-color: #ff3300;
+}
