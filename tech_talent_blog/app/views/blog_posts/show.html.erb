@@ -1,19 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog_post.title %>
-</p>
+<div class = "container-fluid">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<%= @blog_post.title %>
+		</div>
+		<div class="panel-body">
+			<p>by <strong><%= @blog_post.author %></strong> <span class="posted-at">posted at: <%= @blog_post.created_at.strftime('%m/%d/%Y at %I:%M%p') %></span><br>
+			</p>
+			<p><%= @blog_post.blog_entry %></p>
+		</div>
+		<div class="panel-footer">
+			<%= link_to 'Edit Post', edit_blog_post_path(@blog_post), class: "btn btn-warning" %>
+		</div>
+	</div>
 
-<p>
-  <strong>Author:</strong>
-  <%= @blog_post.author %>
-</p>
+	<div class="panel panel-success">
+		<div class="panel-heading">
+			Leave a Comment
+		</div>
+		<div class="panel-body">
+			<%= render 'comments/form' %>
+		</div>
+	</div>
 
-<p>
-  <strong>Blog entry:</strong>
-  <%= @blog_post.blog_entry %>
-</p>
-
-<%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
-<%= link_to 'Back', blog_posts_path %>
+	<div class="panel panel-default">
+		<div class="panel-header">
+			<h4>Comments</h4>
+		</div>
+		<% @blog_post.comments.each do |comment| %>
+		<div class="panel-body">
+			<p><strong><%= comment.author %></strong> said: </p>
+			<p><%= comment.comment_entry %></p>
+			<p><span class="posted-at"><%= comment.created_at.strftime('%m/%d/%y at %H:%M:%S') %></span></p>
+		</div>
+		<% end %>
+	</div>
+	
+	<div>
+		<%= link_to 'Back to Index', blog_posts_path, class: "btn btn-primary" %>
+	</div>
+</div>

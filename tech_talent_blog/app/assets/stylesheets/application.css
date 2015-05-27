@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ .cant-see-me {
+ 	display: none;
+ }

@@ -1,19 +1,19 @@
 
-<h1>Listing Blog Posts</h1>
+<h1>Current Blog Posts</h1>
 
 <div class="row">
   <% @blog_posts.each do |blog_post| %>
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <%= blog_post.title %>
+          <%= link_to blog_post.title, blog_post %>
         </div><!-- panel-heading -->
         <div class="panel-body">
           by <%= blog_post.author %><br />
-          <p><%= blog_post.blog_entry %></p>
+          <p><em><span class="posted-at">posted at: <%= blog_post.created_at.strftime('%m/%d/%Y at %I:%M%p') %></span></em></p>
+          <p><%= blog_post.blog_entry[0..250] %>...[<%= link_to "READ MORE", blog_post %>]</p>
         </div><!-- panel-body -->
         <div class="panel-footer">
-          <%= link_to 'Show', blog_post, class: "btn btn-primary" %>
           <%= link_to 'Edit', edit_blog_post_path(blog_post), class: "btn btn-warning" %>
           <%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
         </div><!-- panel-footer -->
