@@ -4,4 +4,7 @@ class Blog < ActiveRecord::Base
 
 	validates :title, presence: true
 	validates :blog_text, presence: true
+
+	extend FriendlyId
+	friendly_id :title, use: :slugged
 end
