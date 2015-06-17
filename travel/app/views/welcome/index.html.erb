@@ -1,0 +1,51 @@
+<h1>Welcome to my Travel Site</h1>
+<p>This is my very awesome travel site.</p>
+
+<div class='container' id="map-canvas"></div>
+
+<br>
+
+<div class="container">
+	<div class="col-md-4">
+		<div class="row">
+			<%= image_tag 'peru.jpg', width: "256px" %>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="row">
+			<%= image_tag 'greece.ico', width: "256px" %>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="row">
+			<%= image_tag 'usa.ico', width: "256px" %>
+		</div>
+	</div>
+</div><!-- container -->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<!-- Images Using an Array -->
+			<% @travel_pics.each do |pic| %>
+				<%= image_tag pic, width: "300px" %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<!-- Countries in a List using Loop -->
+<!-- <ul>
+	<% @countries.each do |country| %>
+		<li><%= country %></li>
+	<% end %>
+</ul>
+ -->
+

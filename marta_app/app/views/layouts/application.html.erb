@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MartaApp</title>
+
+  <style type="text/css">
+      html, body, #map-canvas { height: 100%; width: 100%; margin: 0; padding: 0;}
+  </style>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+
+  <script type="text/javascript" src ="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_api_key'] %>">
+  </script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container" id="map-canvas">
+	<%= yield %>
+</div>
+
+</body>
+</html>
